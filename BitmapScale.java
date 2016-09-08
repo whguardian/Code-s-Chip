@@ -1,8 +1,8 @@
 /**
                                                                      
-   * @param bitmap      Ô­Í¼
-   * @param edgeLength  Ï£ÍûµÃµ½µÄÕı·½ĞÎ²¿·ÖµÄ±ß³¤
-   * @return  Ëõ·Å½ØÈ¡ÕıÖĞ²¿·ÖºóµÄÎ»Í¼¡£
+   * @param bitmap      åŸå›¾
+   * @param edgeLength  å¸Œæœ›å¾—åˆ°çš„æ­£æ–¹å½¢éƒ¨åˆ†çš„è¾¹é•¿
+   * @return  ç¼©æ”¾æˆªå–æ­£ä¸­éƒ¨åˆ†åçš„ä½å›¾ã€‚
    */
   public static Bitmap centerSquareScaleBitmap(Bitmap bitmap, int edgeLength)
   {
@@ -15,9 +15,9 @@
    int widthOrg = bitmap.getWidth();
    int heightOrg = bitmap.getHeight();
                                                                                 
-   if(widthOrg > edgeLength && heightOrg > edgeLength)
+   if(widthOrg >= edgeLength && heightOrg >= edgeLength)
    {
-    //Ñ¹Ëõµ½Ò»¸ö×îĞ¡³¤¶ÈÊÇedgeLengthµÄbitmap
+    //å‹ç¼©åˆ°ä¸€ä¸ªæœ€å°é•¿åº¦æ˜¯edgeLengthçš„bitmap
     int longerEdge = (int)(edgeLength * Math.max(widthOrg, heightOrg) / Math.min(widthOrg, heightOrg));
     int scaledWidth = widthOrg > heightOrg ? longerEdge : edgeLength;
     int scaledHeight = widthOrg > heightOrg ? edgeLength : longerEdge;
@@ -30,7 +30,7 @@
            return null;
           }
                                                                                       
-       //´ÓÍ¼ÖĞ½ØÈ¡ÕıÖĞ¼äµÄÕı·½ĞÎ²¿·Ö¡£
+       //ä»å›¾ä¸­æˆªå–æ­£ä¸­é—´çš„æ­£æ–¹å½¢éƒ¨åˆ†ã€‚
        int xTopLeft = (scaledWidth - edgeLength) / 2;
        int yTopLeft = (scaledHeight - edgeLength) / 2;
                                                                                     
